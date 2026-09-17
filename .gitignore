@@ -4,7 +4,7 @@ node_modules/
 # Variables d'environnement (mot de passe , clés d'API)
 .env 
 
-# Fichiers système dd
+# Fichiers système
 .Ds_Store
 Thumbs.db
 
