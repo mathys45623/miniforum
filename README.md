@@ -4,12 +4,16 @@
 ```
 Miniforum/
 ├── photos/
-│      └── photo.png       
+│      └── photo.png
+│      └── exploration.png
+│      └── ia.png
+│      └── rechauffement.png
 ├── .gitignore
 ├── README.md
 ├── app.js
 ├── index.html
-└── style.css
+├── style.css
+└── sujets.html
 
 ```
 
