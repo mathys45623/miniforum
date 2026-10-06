@@ -17,12 +17,6 @@ Miniforum/
 
 ```
 
-## Aperçu 📸 
-
-### Photo V1 💼
-![Page V1](photos/Photo.png)
-
-
 ## Information Du Site ❓
 
 TP - Développement Web , classe passerelle
