@@ -11,7 +11,9 @@ Miniforum/
 ├── .gitignore
 ├── README.md
 ├── app.js
+├── connexion.html
 ├── index.html
+├── inscription.html
 ├── style.css
 └── sujets.html
 
