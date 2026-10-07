@@ -4,10 +4,10 @@
 ```
 Miniforum/
 ├── photos/
-│      └── photo.png
-│      └── exploration.png
-│      └── ia.png
-│      └── rechauffement.png
+│      └── blocus.png
+│      └── foot.png
+│      └── gta.png
+│      
 ├── .gitignore
 ├── README.md
 ├── app.js
