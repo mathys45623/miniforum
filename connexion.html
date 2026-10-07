@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniForum - Connexion</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiniForum - Connexion</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
         <h1>Bienvenue sur MiniForum</h1>
 
-<nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="sujets.html">Sujets</a></li>
-      <li><a href="inscription.html">Inscription</a></li>
-    </ul>
-</nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="sujets.html">Sujets</a></li>
+                <li><a href="inscription.html">Inscription</a></li>
+            </ul>
+        </nav>
 
-    <main>
-        <h2>Connexion</h2>
+<main>
+                <h2>Connexion</h2>
+                <form action="/connexion" method="post">
 
-        <form action="/connexion" method="post">
             <fieldset>
+
                 <legend>Vos identifiants</legend>
 
                 <label for="identifiant">Pseudo ou adresse e-mail</label>
@@ -40,6 +41,7 @@
                     <input type="checkbox" name="rester_connecte">
                     Rester connecté sur cet appareil
                 </label>
+
             </fieldset>
 
             <br>
@@ -50,8 +52,17 @@
                 Pas encore de compte ?
                 <a href="inscription.html">S'inscrire</a>
             </p>
-        </form>
-    </main>
+
+</form>
+</main>
+
+            <footer>
+                <p>
+                    MiniForum-Projet du cours de développement web<br>
+                    Classe passerelle-cfpt-i
+                </p>
+            </footer>
+
 
 </body>
 </html>
