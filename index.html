@@ -1,103 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniForum - Accueil</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiniForum - Accueil</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Bienvenue sur MiniForum</h1>
-    <script src="app.js"></script>
+                <h1>Bienvenue sur MiniForum</h1>
+                <script src="app.js"></script>
     
-<nav>
+  <nav>
     <ul>
       <li><a href="sujets.html">Sujets</a></li>
       <li><a href="inscription.html">Inscription</a></li>
       <li><a href="connexion.html">Connexion</a></li>
     </ul>
-</nav>
+  </nav>
+
+
 
 <main>
-    <article id="sujets">
-      <h2>Sujets Récents</h2>
-    </article>
+            <article id="sujets">
+            <h2>Sujets Récents</h2>
+            </article>
+                                        <article id="selection1">
+                                            <h3><a href="sujets.html">🎓 Les blocus des lycées en france</a></h3>
+                                            <p>Clique sur le titre du sujet pour regarder l'article.</p>
+                                            <img src="photos/blocus.png" alt ="image rechauffement">
+                                        </article>
 
-    <article id="selection1">
-      <h3><a href="sujets.html">🎓 Les blocus des lycées en france</a></h3>
-      <p>
-        Clique sur le titre du sujet pour regarder l'article.
-      </p>
-      <img src="photos/blocus.png" alt ="image rechauffement">
-    </article>
 
-    <article id="selection2">
-      <h3><a href="sujets.html">⚽ Match France VS Allemagne - La Remontada</a></h3>
-      <p>
-        Clique sur le titre du sujet pour regarder l'article.
-      </p>
-      <img src="photos/foot.png" alt ="image ia">
-    </article>
+                                        <article id="selection2">
+                                            <h3><a href="sujets.html">⚽ Match France VS Allemagne - La Remontada</a></h3>
+                                            <p>Clique sur le titre du sujet pour regarder l'article.</p>
+                                            <img src="photos/foot.png" alt ="image ia">
+                                        </article>
 
-    <article id="selection3">
-      <h3><a href="sujets.html">🎮 La Sortie Du jeu GTA IV</a></h3>
-      <p>
-        Clique sur le titre du sujet pour regarder l'article.
-      </p>
-      <img src="photos/gta.png" alt ="image exploration">
-    </article>
 
-<section>
-  <h2>Nouveau sujet</h2>
+                                        <article id="selection3">
+                                            <h3><a href="sujets.html">🎮 La Sortie Du jeu GTA IV</a></h3>
+                                            <p>Clique sur le titre du sujet pour regarder l'article.</p>
+                                            <img src="photos/gta.png" alt ="image exploration">
+                                        </article>
 
-  <form action="/topics" method="post">
+  <section>
+      <h2>Nouveau sujet</h2>
+      <form action="/topics" method="post">
 
-    <fieldset>
-      <legend>Votre message</legend>
 
-      <label for="pseudo">Pseudo</label>
-      <input type="text" id="pseudo" name="pseudo" placeholder="ex : alice" required>
 
-      <label for="titre">Titre du sujet</label>
-      <input type="text" id="titre" name="titre" maxlength="80" required>
+            <fieldset>
+              <legend>Votre message</legend>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
-    </fieldset>
+                <label for="pseudo">Pseudo</label>
+                <input type="text" id="pseudo" name="pseudo" placeholder="ex : alice" required>
 
-    <fieldset>
-      <legend>Options de publication</legend>
+                <br><br>
 
-      <label for="categorie">Catégorie</label>
-      <select id="categorie" name="categorie">
-        <option value="general">Général</option>
-        <option value="aide">Aide</option>
-        <option value="projets">Projets</option>
-      </select>
+                <label for="titre">Titre du sujet</label>
+                <input type="text" id="titre" name="titre" maxlength="80" required>
 
-      <p>Visibilité</p>
+                <br><br>
 
-      <input type="radio" id="public" name="visibilite" value="public" checked>
-      <label for="public">Public</label>
+                <label for="message">Message : </label>
+                <br><br>
+                <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
+            </fieldset>
 
-      <input type="radio" id="prive" name="visibilite" value="prive">
-      <label for="prive">Réservé aux membres</label>
-    </fieldset>
 
-    <button type="submit">Publier le sujet</button>
+            <fieldset>
+              <legend>Options de publication</legend>
 
-  </form>
-</section>
+                <label for="categorie">Catégorie</label>
+                <select id="categorie" name="categorie">
 
-</main>
+                <option value="general">Général</option>
+                <option value="aide">Aide</option>
+                <option value="projets">Projets</option>
+                </select>
 
-<footer>
-    <p>
-        MiniForum-Projet du cours de développement web<br>
-        Classe passerelle-cfpt-i
-    </p>
-</footer>
+                      <p>Visibilité</p>
+
+                      <input type="radio" id="public" name="visibilite" value="public" checked>
+                      <label for="public">Public</label>
+
+                      <input type="radio" id="prive" name="visibilite" value="prive">
+                      <label for="prive">Réservé aux membres</label>
+            </fieldset>
+
+                        <button type="submit">Publier le sujet</button>
+
+      </form>
+  </section>
+    </main>
+
+          <footer>
+            <p>
+                MiniForum-Projet du cours de développement web <br>
+                Classe passerelle-cfpt-i
+            </p>
+          </footer>
 
 </body>
 </html>
