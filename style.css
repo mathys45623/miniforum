@@ -66,6 +66,66 @@ button {
 
 /* === 4. Cartes de sujet ======================== */ 
 
+.liste-sujets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.carte-sujet {
+    background-color: #FFFFFF;
+    border: 2px solid #458087;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: auto;
+}
+
+.carte-message {
+    background-color: #FFFFFF;
+    border: 2px solid #458087;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.carte-message h3 {
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+    color: #1D4E89;
+    margin: 0 0 6px;
+}
+
+.carte-sujet h3 a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+    color: #1D4E89;
+    margin: 0 0 6px;
+}
+
+.carte-sujet p {
+    font-size: 12px;
+    color: #777;
+    margin: 0 0 15px;
+}
+
+.carte-message p {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 15px;
+}
+
+.carte-sujet img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
 /* === 5. Formulaires ============================ */
 
 /* === 6. Pied de page =========================== */
