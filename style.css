@@ -1,3 +1,33 @@
+
+/* === Palette ================================
+   Texte         : #333
+   Accent        : #1D4E89
+   Fond de page  : #caedf1
+   Fond de carte : #FFFFFF
+   Bordure       : #b8d9dd
+*/
+
+/* === 1. Reglages generaux ======================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #caedf1;
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 button {
     background-color: #1D4E89;
     color: white;
@@ -6,3 +36,13 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* === 2. En-tete et navigation ================== */
+
+/* === 3. Contenu principal ====================== */
+
+/* === 4. Cartes de sujet ======================== */ 
+
+/* === 5. Formulaires ============================ */
+
+/* === 6. Pied de page =========================== */
