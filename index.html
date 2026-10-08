@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<header class="entete"> 
                 <h1>Bienvenue sur MiniForum</h1>
                 <script src="app.js"></script>
     
@@ -19,27 +20,27 @@
     </ul>
   </nav>
 
-
+</header>
 
 <main>
             <article id="sujets">
-            <h2>Sujets Récents</h2>
+            <h2 class="liste-sujets">Sujets Récents</h2>
             </article>
-                                        <article id="selection1">
+                                        <article id="selection1" class="carte-sujet">
                                             <h3><a href="sujets.html">🎓 Les blocus des lycées en france</a></h3>
                                             <p>Clique sur le titre du sujet pour regarder l'article.</p>
                                             <img src="photos/blocus.png" alt ="image rechauffement">
                                         </article>
 
 
-                                        <article id="selection2">
+                                        <article id="selection2" class="carte-sujet">
                                             <h3><a href="sujets.html">⚽ Match France VS Allemagne - La Remontada</a></h3>
                                             <p>Clique sur le titre du sujet pour regarder l'article.</p>
                                             <img src="photos/foot.png" alt ="image ia">
                                         </article>
 
 
-                                        <article id="selection3">
+                                        <article id="selection3" class="carte-sujet">
                                             <h3><a href="sujets.html">🎮 La Sortie Du jeu GTA IV</a></h3>
                                             <p>Clique sur le titre du sujet pour regarder l'article.</p>
                                             <img src="photos/gta.png" alt ="image exploration">
@@ -90,13 +91,13 @@
                       <label for="prive">Réservé aux membres</label>
             </fieldset>
 
-                        <button type="submit">Publier le sujet</button>
+                        <button type="submit" class="bouton">Publier le sujet</button>
 
       </form>
   </section>
     </main>
 
-          <footer>
+          <footer class="pied">
             <p>
                 MiniForum-Projet du cours de développement web <br>
                 Classe passerelle-cfpt-i
