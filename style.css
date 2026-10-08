@@ -5,6 +5,7 @@
    Fond de page  : #caedf1
    Fond de carte : #FFFFFF
    Bordure       : #b8d9dd
+   Bouton        : #1D4E89
 */
 
 /* === 1. Reglages generaux ======================= */
@@ -38,6 +39,28 @@ button {
 }
 
 /* === 2. En-tete et navigation ================== */
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.entete nav > ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.entete nav a {
+    color: white;
+    text-decoration: none;
+}
 
 /* === 3. Contenu principal ====================== */
 
