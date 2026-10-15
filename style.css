@@ -158,9 +158,9 @@ input[type="checkbox"] + label {
 /* === 6. Pied de page =========================== */
 
 .pied {
-   text-aligne: center;
+   text-align: center;
    padding: 1.00rem 0;
-   color: #1D4E89;
+   color: #000000;
    border: 0,125rem solid #1D4E89;
-   border-radius: #1D4E89);
+   border-radius: #1D4E89;
 }
