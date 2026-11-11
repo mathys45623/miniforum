@@ -12,5 +12,5 @@ const LONGUEUR_MAX = 80;
 const titres = [
     "🎓 Les blocus des lycées en France ?",
     "⚽ Match France VS Allemagne - La Remontada ?",
-    "La sortie Du jeu GTA IV",
+    "🎮 La sortie Du jeu GTA IV",
 ];
