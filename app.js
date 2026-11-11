@@ -14,3 +14,22 @@ const titres = [
     "⚽ Match France VS Allemagne - La Remontada ?",
     "🎮 La sortie Du jeu GTA IV",
 ];
+
+
+function titresTries(titres) {
+    return [...titres].sort((a, b) => a.localeCompare(b, "fr"));
+}
+
+function chercheDansTitres(titres, texte) {
+    return titres.filter(titre =>
+        titre.toLowerCase().includes(texte.toLowerCase())
+    );
+}
+
+function titreExiste(titres, saisie) {
+    const recherche = saisie.trim().toLowerCase();
+
+    return titres.some(titre =>
+        titre.toLowerCase() === recherche
+    );
+}
