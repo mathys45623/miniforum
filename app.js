@@ -33,3 +33,28 @@ function titreExiste(titres, saisie) {
         titre.toLowerCase() === recherche
     );
 }
+
+function validerTitre(titres, saisie) {
+    const titre = saisie.trim();
+
+    if (titre === "") {
+        return "Le titre est obligatoire.";
+    }
+
+
+    if (titre.length < LONGUEUR_MIN) {
+        return "Le titre doit faire au moins " + LONGUEUR_MIN + " caractères.";
+    }
+
+
+    if (titre.length > LONGUEUR_MAX) {
+        return "Le titre ne doit pas dépasser " + LONGUEUR_MAX + " caractères.";
+    }
+
+
+    if (titreExiste(titres, titre)) {
+        return "Ce sujet existe déjà.";
+    }
+    return "";
+}
+
