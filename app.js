@@ -86,26 +86,68 @@ function afficherSujets(liste) {
 
     section.querySelectorAll(".carte-sujet").forEach(carte => carte.remove());
 
-    for (const titre of liste) {
-        section.append(carteSujet(titre));
+    for (let i = liste.length - 1; i >= 0; i--) {
+        section.append(carteSujet(liste[i]));
     }
+
+    section.querySelector("h2").textContent = "Sujets récents (" + liste.length + ")";
 }
 
 function afficherErreur(idMessage, texte) {
     document.getElementById(idMessage).textContent = texte;
 }
 
-if (document.querySelector("#sujets") !== null) {
-    afficherSujets(titres);
+function afficherCompteur(texte) {
+    document.getElementById("compteur-titre").textContent =
+        texte.length + " / " + LONGUEUR_MAX + " caractères";
+}
 
+if (document.querySelector("#sujets") !== null) {
     const formulaire = document.querySelector("#form-nouveau-sujet");
+    const champTitre = document.querySelector("#titre");
+    const champRecherche = document.querySelector("#recherche");
+    const boutonTri = document.querySelector("#bouton-tri");
+
+    let triAlphabetique = false;
+
+  
+    function rafraichir() {
+        let liste = chercheDansTitres(titres, champRecherche.value);
+
+        if (triAlphabetique) {
+           
+            liste = titresTries(liste).reverse();
+        }
+
+        afficherSujets(liste);
+    }
+
+    rafraichir();
+    afficherCompteur("");
+
+    champRecherche.addEventListener("input", rafraichir);
+
+    boutonTri.addEventListener("click", () => {
+        triAlphabetique = !triAlphabetique;
+
+        if (triAlphabetique) {
+            boutonTri.textContent = "Plus récents d'abord";
+        } else {
+            boutonTri.textContent = "Trier de A à Z";
+        }
+
+        rafraichir();
+    });
+
+    champTitre.addEventListener("input", () => {
+        afficherCompteur(champTitre.value);
+    });
 
     formulaire.addEventListener("submit", (event) => {
-
         event.preventDefault();
 
         const pseudo = document.querySelector("#pseudo").value;
-        const titre = document.querySelector("#titre").value;
+        const titre = champTitre.value;
         const message = document.querySelector("#message").value;
 
         const erreurPseudo = validerPseudo(pseudo);
@@ -119,11 +161,13 @@ if (document.querySelector("#sujets") !== null) {
         if (erreurPseudo !== "" || erreurTitre !== "" || erreurMessage !== "") {
             return;
         }
-        
+
         titres.push(titre.trim());
-        afficherSujets(titres);
-        
+        champRecherche.value = "";
+        rafraichir();
+
         formulaire.reset();
+        afficherCompteur("");
         document.querySelector("#pseudo").focus();
     });
 }
