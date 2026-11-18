@@ -5,64 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MiniForum - Connexion</title>
 <link rel="stylesheet" href="style.css">
-<script src = "app.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
 
-<header class="entete">   
+<header class="entete">
+  <h1>Bienvenue sur MiniForum</h1>
 
-        <h1>Bienvenue sur MiniForum</h1>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="sujets.html">Sujets</a></li>
-                <li><a href="inscription.html">Inscription</a></li>
-            </ul>
-        </nav>
-
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="sujets.html">Sujets</a></li>
+      <li><a href="inscription.html">Inscription</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-                <h2>Connexion</h2>
-                <form action="/connexion" method="post">
+  <h2 class="titre-page">Connexion</h2>
 
-            <fieldset>
+  <form class="formulaire-compte" action="/connexion" method="post">
 
-                <legend>Vos identifiants</legend>
+    <fieldset>
+      <legend>Vos identifiants</legend>
 
-                <label for="identifiant">Pseudo ou adresse e-mail</label>
-                <input type="text" id="identifiant" name="identifiant">
+      <label for="identifiant">Pseudo ou adresse e-mail</label>
+      <input type="text" id="identifiant" name="identifiant" required>
 
-                <br><br>
+      <label for="motdepasse">Mot de passe</label>
+      <input type="password" id="motdepasse" name="motdepasse" required>
 
-                <label for="motdepasse">Mot de passe</label>
-                <input type="password" id="motdepasse" name="motdepasse" required>
+      <label class="case">
+        <input type="checkbox" name="rester_connecte">
+        Rester connecté sur cet appareil
+      </label>
+    </fieldset>
 
-                <br><br>
+    <button type="submit" class="bouton bouton-large">Se connecter</button>
 
-                <label>
-                    <input type="checkbox" name="rester_connecte">
-                    Rester connecté sur cet appareil
-                </label>
+    <p class="lien-compte">Pas encore de compte ? <a href="inscription.html">S'inscrire</a></p>
 
-                <button type="submit" class="bouton">Se connecter</button>
-                <p> Pas encore de compte ?
-                <a href="inscription.html">S'inscrire</a>
-                </p>
-
-            </fieldset>
-
-</form>
+  </form>
 </main>
 
-            <footer class="pied">
-                <p>
-                    MiniForum-Projet du cours de développement web<br>
-                    Classe passerelle-cfpt-i
-                </p>
-            </footer>
-
+<footer class="pied">
+  <p>
+    MiniForum-Projet du cours de développement web<br>
+    Classe passerelle-cfpt-i
+  </p>
+</footer>
 
 </body>
 </html>
