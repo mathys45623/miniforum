@@ -1,12 +1,17 @@
+/* === Palette ==================================== */
 
-/* === Palette ====================================
-   Texte         : #333
-   Accent        : #1D4E89
-   Fond de page  : #caedf1
-   Fond de carte : #FFFFFF
-   Bordure       : #b8d9dd
-   Bouton        : #1D4E89
-*/
+:root {
+    --couleur-texte: #333;
+    --couleur-texte-discret: #777;
+    --couleur-texte-clair: #FFFFFF;
+    --couleur-accent: #1D4E89;
+    --couleur-fond: #caedf1;
+    --couleur-carte: #FFFFFF;
+    --couleur-bordure: #b8d9dd;
+    --couleur-bordure-carte: #458087;
+    --couleur-entete: #333;
+    --couleur-erreur: #A32020;
+}
 
 /* === 1. Reglages generaux ======================= */
 
@@ -18,8 +23,8 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
-    background-color: #caedf1;
+    color: var(--couleur-texte);
+    background-color: var(--couleur-fond);
     margin: 0;
 }
 
@@ -30,8 +35,8 @@ main {
 }
 
 button {
-    background-color: #1D4E89;
-    color: white;
+    background-color: var(--couleur-accent);
+    color: var(--couleur-texte-clair);
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -44,8 +49,8 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
+    background-color: var(--couleur-entete);
+    color: var(--couleur-texte-clair);
     padding: 20px;
 }
 
@@ -58,13 +63,13 @@ button {
 }
 
 .entete nav a {
-    color: white;
+    color: var(--couleur-texte-clair);
     text-decoration: none;
 }
 
 /* === 3. Contenu principal ====================== */
 
-/* === 4. Cartes de sujet ======================== */ 
+/* === 4. Cartes de sujet ======================== */
 
 .liste-sujets {
     display: flex;
@@ -78,8 +83,8 @@ button {
 
 .carte-message,
 .carte-sujet {
-    background-color: #FFFFFF;
-    border: 2px solid #458087;
+    background-color: var(--couleur-carte);
+    border: 2px solid var(--couleur-bordure-carte);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: auto;
@@ -87,17 +92,16 @@ button {
 
 .carte-sujet h3 a,
 .carte-message h3 {
-    color: inherit;
     text-decoration: none;
     font-size: 20px;
-    color: #1D4E89;
+    color: var(--couleur-accent);
     margin: 0 0 6px;
 }
 
 .carte-sujet p,
 .carte-message p {
     font-size: 13px;
-    color: #777;
+    color: var(--couleur-texte-discret);
     margin: 0 0 15px;
 }
 
@@ -122,20 +126,20 @@ label {
 input, textarea, select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #b8d9dd;
+    border: 1px solid var(--couleur-bordure);
     border-radius: 10px;
 }
 
 fieldset {
-    background-color: #FFFFFF;
-    border: 1px solid #b8d9dd;
+    background-color: var(--couleur-carte);
+    border: 1px solid var(--couleur-bordure);
     border-radius: 10px;
     margin-bottom: 16px;
 }
 
 .bouton {
-    background-color: #1D4E89;
-    color: white;
+    background-color: var(--couleur-accent);
+    color: var(--couleur-texte-clair);
     border: none;
     padding: 12px 24px;
     border-radius: 6px;
@@ -155,12 +159,19 @@ input[type="checkbox"] + label {
     margin-right: 16px;
 }
 
+.message-erreur {
+    margin: 0.25rem 0 0;
+    min-height: 1.2em;          
+    color: var(--couleur-erreur);
+    font-size: 0.875rem;
+}
+
 /* === 6. Pied de page =========================== */
 
 .pied {
-   text-align: center;
-   padding: 1.00rem 0;
-   color: #000000;
-   border: 0,125rem solid #1D4E89;
-   border-radius: #1D4E89;
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--couleur-texte);
+    border: 0.125rem solid var(--couleur-accent);
+    border-radius: 8px;
 }
