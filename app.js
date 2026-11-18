@@ -89,7 +89,7 @@ function afficherSujets(liste) {
     for (let i = liste.length - 1; i >= 0; i--) {
         section.append(carteSujet(liste[i]));
     }
-
+    
     section.querySelector("h2").textContent = "Sujets récents (" + liste.length + ")";
 }
 
@@ -110,12 +110,10 @@ if (document.querySelector("#sujets") !== null) {
 
     let triAlphabetique = false;
 
-  
     function rafraichir() {
         let liste = chercheDansTitres(titres, champRecherche.value);
 
         if (triAlphabetique) {
-           
             liste = titresTries(liste).reverse();
         }
 
@@ -124,7 +122,7 @@ if (document.querySelector("#sujets") !== null) {
 
     rafraichir();
     afficherCompteur("");
-
+    
     champRecherche.addEventListener("input", rafraichir);
 
     boutonTri.addEventListener("click", () => {
@@ -138,7 +136,7 @@ if (document.querySelector("#sujets") !== null) {
 
         rafraichir();
     });
-
+    
     champTitre.addEventListener("input", () => {
         afficherCompteur(champTitre.value);
     });
@@ -157,6 +155,10 @@ if (document.querySelector("#sujets") !== null) {
         afficherErreur("erreur-pseudo", erreurPseudo);
         afficherErreur("erreur-titre", erreurTitre);
         afficherErreur("erreur-message", erreurMessage);
+
+        document.querySelector("#pseudo").classList.toggle("champ-invalide", erreurPseudo !== "");
+        champTitre.classList.toggle("champ-invalide", erreurTitre !== "");
+        document.querySelector("#message").classList.toggle("champ-invalide", erreurMessage !== "");
 
         if (erreurPseudo !== "" || erreurTitre !== "" || erreurMessage !== "") {
             return;
