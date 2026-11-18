@@ -2,12 +2,14 @@ console.log("app.js chargé");
 
 const LONGUEUR_MIN = 5;
 const LONGUEUR_MAX = 80;
+const MESSAGE_MAX = 500;
 
 const titres = [
     "🎓 Les blocus des lycées en France ?",
     "⚽ Match France VS Allemagne - La Remontada ?",
     "🎮 La sortie Du jeu GTA IV",
 ];
+
 
 function titresTries(titres) {
     return [...titres].sort((a, b) => a.localeCompare(b, "fr"));
@@ -48,6 +50,26 @@ function validerTitre(titres, saisie) {
     return "";
 }
 
+function validerPseudo(saisie) {
+    if (saisie.trim() === "") {
+        return "Le pseudo est obligatoire.";
+    }
+    return "";
+}
+
+function validerMessage(saisie) {
+    const message = saisie.trim();
+
+    if (message === "") {
+        return "Le message est obligatoire.";
+    }
+
+    if (message.length > MESSAGE_MAX) {
+        return "Le message ne doit pas dépasser " + MESSAGE_MAX + " caractères.";
+    }
+    return "";
+}
+
 function carteSujet(titre) {
     const carte = document.createElement("article");
     carte.classList.add("carte-sujet");
@@ -69,26 +91,38 @@ function afficherSujets(liste) {
     }
 }
 
+function afficherErreur(idMessage, texte) {
+    document.getElementById(idMessage).textContent = texte;
+}
+
 if (document.querySelector("#sujets") !== null) {
     afficherSujets(titres);
-const formulaire = document.querySelector("#form-nouveau-sujet");
+
+    const formulaire = document.querySelector("#form-nouveau-sujet");
 
     formulaire.addEventListener("submit", (event) => {
-        
+
         event.preventDefault();
 
-        const saisie = document.querySelector("#titre").value;
+        const pseudo = document.querySelector("#pseudo").value;
+        const titre = document.querySelector("#titre").value;
+        const message = document.querySelector("#message").value;
 
-        const erreur = validerTitre(titres, saisie);
-        if (erreur !== "") {
-            afficherErreur("erreur-titre", erreur);
+        const erreurPseudo = validerPseudo(pseudo);
+        const erreurTitre = validerTitre(titres, titre);
+        const erreurMessage = validerMessage(message);
+
+        afficherErreur("erreur-pseudo", erreurPseudo);
+        afficherErreur("erreur-titre", erreurTitre);
+        afficherErreur("erreur-message", erreurMessage);
+
+        if (erreurPseudo !== "" || erreurTitre !== "" || erreurMessage !== "") {
             return;
         }
-
-        afficherErreur("erreur-titre", "");
-        titres.push(saisie.trim());
+        
+        titres.push(titre.trim());
         afficherSujets(titres);
-
+        
         formulaire.reset();
         document.querySelector("#pseudo").focus();
     });
