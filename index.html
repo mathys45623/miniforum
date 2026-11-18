@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MiniForum - Accueil</title>
 <link rel="stylesheet" href="style.css">
-<script src = "app.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
 
-<header class="entete"> 
-                <h1>Bienvenue sur MiniForum</h1>
-                <script src="app.js"></script>
-    
+<header class="entete">
+  <h1>Bienvenue sur MiniForum</h1>
+
   <nav>
     <ul>
       <li><a href="sujets.html">Sujets</a></li>
@@ -20,69 +19,73 @@
       <li><a href="connexion.html">Connexion</a></li>
     </ul>
   </nav>
-
 </header>
 
 <main>
-            <section id="sujets">
-            <h2 class="liste-sujets">Sujets Récents</h2>
-            </section>
-                                        
-  <section>
-      <h2>Nouveau sujet</h2>
-      <form id="form-nouveaz-sujet "action="/topics" method="post" novalidate>
 
+  <section id="sujets" class="liste-sujets">
+    <h2>Sujets récents</h2>
 
+    <label for="recherche">Rechercher un sujet</label>
+    <input type="search" id="recherche" name="recherche" placeholder="ex : match">
 
-            <fieldset>
-              <legend>Votre message</legend>
+    <button type="button" id="bouton-tri" class="bouton">Trier de A à Z</button>
 
-                <label for="pseudo">Pseudo</label>
-                <input type="text" id="pseudo" name="pseudo" placeholder="ex : alice" required>
-                <p class="message-erreur" id="erreur-pseudo"></p>
-
-                <label for="titre">Titre du sujet</label>
-                <input type="text" id="titre" name="titre" maxlength="80" required>
-                <p class="message-erreur" id="erreur-titre"></p>
-
-                <label for="message">Message : </label>
-                <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
-                <p class="message-erreur" id="erreur-message"></p>
-            </fieldset>
-
-
-            <fieldset>
-              <legend>Options de publication</legend>
-
-                <label for="categorie">Catégorie</label>
-                <select id="categorie" name="categorie">
-
-                <option value="general">Général</option>
-                <option value="aide">Aide</option>
-                <option value="projets">Projets</option>
-                </select>
-
-                      <p>Visibilité</p>
-
-                      <input type="radio" id="public" name="visibilite" value="public" checked>
-                      <label for="public">Public</label>
-
-                      <input type="radio" id="prive" name="visibilite" value="prive">
-                      <label for="prive">Réservé aux membres</label>
-            </fieldset>
-
-                        <button type="submit" class="bouton">Publier le sujet</button>
-
-      </form>
   </section>
-    </main>
 
-          <footer class="pied">
-            <p>
-                MiniForum-Projet du cours de développement web <br>
-                Classe passerelle-cfpt-i
-            </p>
-          </footer>
+  <section>
+    <h2>Nouveau sujet</h2>
+    <form id="form-nouveau-sujet" action="/topics" method="post" novalidate>
+
+      <fieldset>
+        <legend>Votre message</legend>
+
+        <label for="pseudo">Pseudo</label>
+        <input type="text" id="pseudo" name="pseudo" placeholder="ex : alice" required>
+        <p class="message-erreur" id="erreur-pseudo"></p>
+
+        <label for="titre">Titre du sujet</label>
+        <input type="text" id="titre" name="titre" maxlength="80" required>
+        <p class="compteur" id="compteur-titre"></p>
+        <p class="message-erreur" id="erreur-titre"></p>
+
+        <label for="message">Message : </label>
+        <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
+        <p class="message-erreur" id="erreur-message"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Options de publication</legend>
+
+        <label for="categorie">Catégorie</label>
+        <select id="categorie" name="categorie">
+          <option value="general">Général</option>
+          <option value="aide">Aide</option>
+          <option value="projets">Projets</option>
+        </select>
+
+        <p>Visibilité</p>
+
+        <input type="radio" id="public" name="visibilite" value="public" checked>
+        <label for="public">Public</label>
+
+        <input type="radio" id="prive" name="visibilite" value="prive">
+        <label for="prive">Réservé aux membres</label>
+      </fieldset>
+
+      <button type="submit" class="bouton">Publier le sujet</button>
+
+    </form>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <p>
+    MiniForum-Projet du cours de développement web <br>
+    Classe passerelle-cfpt-i
+  </p>
+</footer>
 
 </body>
 </html>
