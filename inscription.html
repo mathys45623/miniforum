@@ -5,71 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MiniForum - Inscription</title>
 <link rel="stylesheet" href="style.css">
-<script src = "app.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
 
-<header class="entete"> 
+<header class="entete">
+  <h1>Bienvenue sur MiniForum</h1>
 
-            <h1>Bienvenue sur MiniForum</h1>
-
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="sujets.html">Sujets</a></li>
-                        <li><a href="connexion.html">Connexion</a></li>
-                    </ul>
-                </nav>
-
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="sujets.html">Sujets</a></li>
+      <li><a href="connexion.html">Connexion</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-                <h2>Créer un compte</h2>
-                <form action="/inscription" method="post">
+  <h2 class="titre-page">Créer un compte</h2>
 
-                    <fieldset>
-                        <legend>Identifiants</legend>
+  <form class="formulaire-compte" action="/inscription" method="post">
 
-                            <label for="pseudo">Pseudo</label>
-                            <input type="text" id="pseudo" name="pseudo" pattern="[A-Za-z0-9]{3,15}" title="Le pseudo doit contenir entre 3 et 15 lettres ou chiffres." required>
+    <fieldset>
+      <legend>Identifiants</legend>
 
-                            <label for="email">Adresse e-mail</label>
-                            <input type="email" id="email" name="email" required>
+      <label for="pseudo">Pseudo</label>
+      <input type="text" id="pseudo" name="pseudo" pattern="[A-Za-z0-9]{3,15}" title="Le pseudo doit contenir entre 3 et 15 lettres ou chiffres." required>
 
-                            <label for="motdepasse">Mot de passe</label>
-                            <input type="password" id="motdepasse" name="motdepasse" minlength="8" required>
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="email" required>
 
-                            <label for="naissance">Date de naissance</label>
-                            <input type="date" id="naissance" name="naissance" required>
-                    </fieldset>
+      <label for="motdepasse">Mot de passe</label>
+      <input type="password" id="motdepasse" name="motdepasse" minlength="8" required>
 
+      <label for="naissance">Date de naissance</label>
+      <input type="date" id="naissance" name="naissance" required>
+    </fieldset>
 
-                    <fieldset>
-                        <legend>Préférences</legend>
+    <fieldset>
+      <legend>Préférences</legend>
 
-                            <label>
-                                <input type="checkbox" name="newsletter">
-                                Recevoir la lettre d'information
-                            </label>
+      <label class="case">
+        <input type="checkbox" name="newsletter">
+        Recevoir la lettre d'information
+      </label>
 
-                            <label>
-                                <input type="checkbox" name="cgu" required>
-                                J'accepte les conditions d'utilisation
-                            </label>
+      <label class="case">
+        <input type="checkbox" name="cgu" required>
+        J'accepte les conditions d'utilisation
+      </label>
+    </fieldset>
 
-                                <button type="submit" class="bouton">Créer mon compte</button>
-                                <a href="connexion.html">Déjà inscrit ? Se connecter</a>
-                    </fieldset>
+    <button type="submit" class="bouton bouton-large">Créer mon compte</button>
 
-</form>
+    <p class="lien-compte">Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+
+  </form>
 </main>
 
-                <footer class="pied">
-                    <p>
-                        MiniForum-Projet du cours de développement web<br>
-                        Classe passerelle-cfpt-i
-                    </p>
-                </footer>
+<footer class="pied">
+  <p>
+    MiniForum-Projet du cours de développement web<br>
+    Classe passerelle-cfpt-i
+  </p>
+</footer>
 
 </body>
 </html>
