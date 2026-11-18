@@ -1,11 +1,5 @@
 console.log("app.js chargé");
 
-const btn = document.getElementById('btn');
-
-btn.addEventListener('click', () => {
-    alert ('Bonjour depuis JavaScript !');
-});
-
 const LONGUEUR_MIN = 5;
 const LONGUEUR_MAX = 80;
 
@@ -14,7 +8,6 @@ const titres = [
     "⚽ Match France VS Allemagne - La Remontada ?",
     "🎮 La sortie Du jeu GTA IV",
 ];
-
 
 function titresTries(titres) {
     return [...titres].sort((a, b) => a.localeCompare(b, "fr"));
@@ -41,16 +34,13 @@ function validerTitre(titres, saisie) {
         return "Le titre est obligatoire.";
     }
 
-
     if (titre.length < LONGUEUR_MIN) {
         return "Le titre doit faire au moins " + LONGUEUR_MIN + " caractères.";
     }
 
-
     if (titre.length > LONGUEUR_MAX) {
         return "Le titre ne doit pas dépasser " + LONGUEUR_MAX + " caractères.";
     }
-
 
     if (titreExiste(titres, titre)) {
         return "Ce sujet existe déjà.";
@@ -58,3 +48,27 @@ function validerTitre(titres, saisie) {
     return "";
 }
 
+function carteSujet(titre) {
+    const carte = document.createElement("article");
+    carte.classList.add("carte-sujet");
+
+    const h3 = document.createElement("h3");
+    h3.textContent = titre;
+
+    carte.append(h3);
+    return carte;
+}
+
+function afficherSujets(liste) {
+    const section = document.querySelector("#sujets");
+
+    section.querySelectorAll(".carte-sujet").forEach(carte => carte.remove());
+
+    for (const titre of liste) {
+        section.append(carteSujet(titre));
+    }
+}
+
+if (document.querySelector("#sujets") !== null) {
+    afficherSujets(titres);
+}
