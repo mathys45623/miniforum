@@ -166,6 +166,45 @@ a:focus-visible {
     border-radius: 4px;
 }
 
+.titre-page {
+    text-align: center;
+}
+
+.fil-sujets {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.fil-sujets .carte-message {
+    margin: 0;
+    padding: 20px 24px;
+}
+
+.fil-sujets .carte-message h3 {
+    color: var(--couleur-accent);
+}
+
+.fil-sujets .carte-message p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--couleur-texte);
+}
+
+.reponse summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--couleur-accent);
+}
+
+.reponse[open] summary {
+    margin-bottom: 12px;
+}
+
+.reponse fieldset {
+    margin-bottom: 0;
+}
+
 /* === 5. Formulaires ============================ */
 
 input, textarea, select, button {
@@ -244,6 +283,16 @@ input[type="checkbox"] + label {
 
 .message-erreur + label {
     margin-top: 8px;
+}
+
+input + label,
+textarea + label,
+select + label {
+    margin-top: 12px;
+}
+
+fieldset .bouton {
+    margin-top: 12px;
 }
 
 .compteur {
