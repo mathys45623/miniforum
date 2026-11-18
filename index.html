@@ -26,10 +26,11 @@
   <section id="sujets" class="liste-sujets">
     <h2>Sujets récents</h2>
 
-    <label for="recherche">Rechercher un sujet</label>
-    <input type="search" id="recherche" name="recherche" placeholder="ex : match">
-
-    <button type="button" id="bouton-tri" class="bouton">Trier de A à Z</button>
+    <div class="outils-liste">
+      <label for="recherche">Rechercher un sujet</label>
+      <input type="search" id="recherche" name="recherche" placeholder="ex : match">
+      <button type="button" id="bouton-tri" class="bouton">Trier de A à Z</button>
+    </div>
 
   </section>
 
@@ -49,7 +50,7 @@
         <p class="compteur" id="compteur-titre"></p>
         <p class="message-erreur" id="erreur-titre"></p>
 
-        <label for="message">Message : </label>
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
         <p class="message-erreur" id="erreur-message"></p>
       </fieldset>
