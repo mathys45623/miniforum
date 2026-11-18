@@ -5,6 +5,7 @@
     --couleur-texte-discret: #777;
     --couleur-texte-clair: #FFFFFF;
     --couleur-accent: #1D4E89;
+    --couleur-accent-fonce: #163C6A;
     --couleur-fond: #caedf1;
     --couleur-carte: #FFFFFF;
     --couleur-bordure: #b8d9dd;
@@ -43,6 +44,16 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: var(--couleur-accent-fonce);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--couleur-accent);
+    outline-offset: 2px;
+}
+
 /* === 2. En-tete et navigation ================== */
 
 .entete {
@@ -67,18 +78,41 @@ button {
     text-decoration: none;
 }
 
+.entete nav a:hover {
+    text-decoration: underline;
+}
+
 /* === 3. Contenu principal ====================== */
 
 /* === 4. Cartes de sujet ======================== */
 
 .liste-sujets {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 16px;
-    list-style: none;
-    margin: 0;
+    margin: 0 0 32px;
     padding: 0;
+}
+
+.liste-sujets > h2,
+.outils-liste {
+    grid-column: 1 / -1;
+}
+
+.liste-sujets > h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.outils-liste {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 12px;
     align-items: center;
+}
+
+.outils-liste label {
+    grid-column: 1 / -1;
 }
 
 .carte-message,
@@ -103,6 +137,26 @@ button {
     font-size: 13px;
     color: var(--couleur-texte-discret);
     margin: 0 0 15px;
+}
+
+.liste-sujets .carte-sujet {
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    margin: 0;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.liste-sujets .carte-sujet:hover {
+    border-color: var(--couleur-accent);
+    transform: translateY(-2px);
+}
+
+.carte-sujet h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--couleur-accent);
 }
 
 .carte-sujet img {
@@ -130,11 +184,31 @@ input, textarea, select {
     border-radius: 10px;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--couleur-accent);
+    box-shadow: 0 0 0 3px var(--couleur-bordure);
+}
+
+.champ-invalide,
+.champ-invalide:focus {
+    border-color: var(--couleur-erreur);
+}
+
+legend {
+    padding: 0 6px;
+    font-weight: bold;
+    color: var(--couleur-accent);
+}
+
 fieldset {
     background-color: var(--couleur-carte);
     border: 1px solid var(--couleur-bordure);
     border-radius: 10px;
     margin-bottom: 16px;
+    padding: 12px 16px 16px;
 }
 
 .bouton {
@@ -146,13 +220,15 @@ fieldset {
     cursor: pointer;
 }
 
-/* Les boutons radio et les cases a cocher gardent leur taille normale */
+.bouton:hover {
+    background-color: var(--couleur-accent-fonce);
+}
+
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
 }
 
-/* ...et leur label reste a cote d'eux */
 input[type="radio"] + label,
 input[type="checkbox"] + label {
     display: inline;
@@ -161,9 +237,13 @@ input[type="checkbox"] + label {
 
 .message-erreur {
     margin: 0.25rem 0 0;
-    min-height: 1.2em;          
+    min-height: 1.2em;         
     color: var(--couleur-erreur);
     font-size: 0.875rem;
+}
+
+.message-erreur + label {
+    margin-top: 8px;
 }
 
 .compteur {
@@ -179,6 +259,5 @@ input[type="checkbox"] + label {
     text-align: center;
     padding: 1rem 0;
     color: var(--couleur-texte);
-    border: 0.125rem solid var(--couleur-accent);
-    border-radius: 8px;
+    border-top: 0.125rem solid var(--couleur-accent);
 }
