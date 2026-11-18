@@ -13,6 +13,7 @@ Miniforum/
 ├── app.js
 ├── connexion.html
 ├── index.html
+├── miniforum_mathys.sql
 ├── inscription.html
 ├── style.css
 └── sujets.html
