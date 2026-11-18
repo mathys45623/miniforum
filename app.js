@@ -71,4 +71,25 @@ function afficherSujets(liste) {
 
 if (document.querySelector("#sujets") !== null) {
     afficherSujets(titres);
+const formulaire = document.querySelector("#form-nouveau-sujet");
+
+    formulaire.addEventListener("submit", (event) => {
+        
+        event.preventDefault();
+
+        const saisie = document.querySelector("#titre").value;
+
+        const erreur = validerTitre(titres, saisie);
+        if (erreur !== "") {
+            afficherErreur("erreur-titre", erreur);
+            return;
+        }
+
+        afficherErreur("erreur-titre", "");
+        titres.push(saisie.trim());
+        afficherSujets(titres);
+
+        formulaire.reset();
+        document.querySelector("#pseudo").focus();
+    });
 }
