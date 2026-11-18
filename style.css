@@ -205,6 +205,44 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
+.formulaire-compte {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.formulaire-compte fieldset {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 16px 20px 20px;
+}
+
+.case {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.bouton-large {
+    width: 100%;
+    font-size: 16px;
+}
+
+.lien-compte {
+    text-align: center;
+}
+
+main a,
+main a:visited {
+    color: var(--couleur-accent);
+    font-weight: bold;
+}
+
+main a:hover {
+    color: var(--couleur-accent-fonce);
+}
+
 /* === 5. Formulaires ============================ */
 
 input, textarea, select, button {
@@ -276,7 +314,7 @@ input[type="checkbox"] + label {
 
 .message-erreur {
     margin: 0.25rem 0 0;
-    min-height: 1.2em;         
+    min-height: 1.2em;      
     color: var(--couleur-erreur);
     font-size: 0.875rem;
 }
